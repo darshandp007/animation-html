@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+            #stage {
+                margin-top: 75px;
+                height: 600px;
+                position: relative;
+            }
+            #ball {
+                margin-left: 43%;
+                height: 50px;
+                position: absolute;
+                width: 50px;
+                background-color: red;
+                border-radius: 30px;
+            }
+            hr{
+                border: blue;
+                border-bottom: 6px solid blue;
+                padding-bottom: 598px;
+                width: 200px;
+                margin-left:500px;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="stage">
+            <div id="ball"></div>
+            <hr>
+        </div>
+        <br>
+        <p id="test"></p>
+        <script>
+            pos=0;
+            var elem = document.getElementById("ball");
+            increment();
+            function increment(){
+                    var id = setInterval(frame2, 5);
+                    
+                    function frame2() {
+                        if (pos == 548) {
+                        decrement();
+                        } else { 
+                            pos++;
+                            elem.style.top = pos + 'px';
+                        }
+                    }
+            }
+            function decrement(){
+                var id1 = setInterval(frame,5);
+                    function frame(){
+                        if(pos == 0){
+                            increment();
+                        }else{
+                            pos--;
+                            elem.style.top = pos + 'px';
+                        }
+
+                    }
+            }
+        </script>
+    </body>
+</html> 
